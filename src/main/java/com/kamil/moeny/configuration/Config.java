@@ -1,16 +1,15 @@
-package com.kamil.moeny.money.configuration;
+package com.kamil.moeny.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.kamil.moeny.money.service.CategoryService;
-import com.kamil.moeny.money.service.SpendingService;
-import com.kamil.moeny.money.service.UserService;
+import com.kamil.moeny.service.CategoryService;
+import com.kamil.moeny.service.SpendingService;
+import com.kamil.moeny.service.UserService;
 
 @Configuration
 public class Config {
 
-	
 	@Bean
 	public UserService userService() {
 		return new UserService();
@@ -25,4 +24,9 @@ public class Config {
 	public CategoryService categoryService() {
 		return new CategoryService();
 	}
+	
+//	@Bean
+//	public CategoryComponent categoryComponent(){
+//		return new CategoryComponent();
+//	}
 }

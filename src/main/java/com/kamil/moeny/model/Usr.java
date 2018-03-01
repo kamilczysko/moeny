@@ -1,8 +1,7 @@
-package com.kamil.moeny.money.model;
+package com.kamil.moeny.model;
 
 
-
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +14,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class AuthUser {
+public class Usr {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,14 +25,23 @@ public class AuthUser {
 	public String login;
 	
 	@NotNull
-	public String name;
-	
-	@NotNull
 	public String password;
-	
-	@NotNull
-	public float actual;
+
+
+	public float actual_balance;
 	
 	@NotNull
 	public Date startDate;
+	
+	public Usr(String login, String password){
+		this.login = login;
+		this.password = password;
+		this.startDate = new Date();
+		this.actual_balance = 0.0f;
+	}
+	
+	public Usr(){
+		this.startDate = new Date();
+		this.actual_balance = 0.0f;
+	}
 }
